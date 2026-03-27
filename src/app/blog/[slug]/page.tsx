@@ -4,6 +4,9 @@ import Link from "next/link";
 import { formatDate } from "@/lib/format";
 import { getAllPostSlugs, getPostBySlug } from "@/lib/mdx";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export async function generateStaticParams() {
   const slugs = await getAllPostSlugs();
   return slugs.map((slug) => ({ slug }));
