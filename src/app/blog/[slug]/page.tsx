@@ -12,8 +12,9 @@ export async function generateStaticParams() {
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = await getPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   if (!post) return {};
 
   return {
@@ -24,14 +25,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: post.frontmatter.title,
       description: post.frontmatter.description,
       type: "article",
-      url: `https://kirans-blog.vercel.app/blog/${params.slug}`,
+      url: `https://kirans-blog.vercel.app/blog/${slug}`,
       tags: post.frontmatter.tags,
     },
   };
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = await getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   if (!post) notFound();
 
   const hero = post.frontmatter.heroColor ?? "#0b1321";
