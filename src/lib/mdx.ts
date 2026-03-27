@@ -34,6 +34,8 @@ type StoredPost = {
 const posts = postsData as StoredPost[];
 const postMap = new Map(posts.map((post) => [post.slug, post]));
 
+console.log(`[posts] cached ${posts.length} entries`);
+
 export async function getAllPostSlugs() {
   return posts.map((post) => post.slug);
 }
@@ -45,7 +47,10 @@ export async function getPostSummaries() {
 export async function getPostBySlug(slug?: string): Promise<PostContent | null> {
   if (!slug) return null;
   const record = postMap.get(slug);
-  if (!record) return null;
+  if (!record) {
+    console.warn(`[posts] missing slug: ${slug}`);
+    return null;
+  }
 
   const { content, frontmatter } = await compileMDX<PostFrontmatter>({
     source: record.raw,
