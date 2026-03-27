@@ -3,7 +3,9 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   experimental: {
     outputFileTracingIncludes: {
-      "/*": ["./content/**/*"],
+      "/": ["./content/**/*"],
+      "/blog": ["./content/**/*"],
+      "/blog/[slug]": ["./content/**/*"],
     },
   },
 };
