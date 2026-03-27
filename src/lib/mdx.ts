@@ -68,7 +68,9 @@ export async function getPostSummaries() {
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
-export async function getPostBySlug(slug: string): Promise<PostContent | null> {
+export async function getPostBySlug(slug?: string): Promise<PostContent | null> {
+  if (!slug) return null;
+
   try {
     const file = await readPostFile(slug);
     const stats = readingTime(file);
