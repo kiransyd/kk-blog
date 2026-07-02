@@ -6,53 +6,57 @@ export default async function HomePage() {
   const posts = await getPostSummaries();
 
   return (
-    <div className="bg-[#f5f5fa] px-4 py-16 dark:bg-[#05050b]">
-      <div className="mx-auto flex w-full max-w-5xl flex-col gap-12">
-        <header className="rounded-4xl relative overflow-hidden bg-gradient-to-br from-purple-600 via-blue-600 to-emerald-500 p-10 text-white shadow-2xl">
-          <div className="absolute inset-0 opacity-30" aria-hidden />
-          <div className="relative z-10 flex flex-col gap-6">
-            <p className="text-sm uppercase tracking-[0.3em] text-white/70">AI Operator Journal</p>
-            <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">
-              Field notes on using AI agents to replace meetings, freelancers, and busywork.
-            </h1>
-            <p className="text-lg text-white/80 sm:text-xl">
-              Whenever I watch a standout video or run a real experiment, I translate it into a playbook here—no fluff, just
-              the signal my future self will actually use.
-            </p>
-            <div className="flex flex-wrap gap-4 text-sm font-semibold">
-              <Link
-                href="#posts"
-                className="rounded-full bg-white px-5 py-2 text-zinc-900 transition hover:bg-white/90"
-              >
-                Read the latest post
-              </Link>
-              <Link
-                href="/blog"
-                className="rounded-full border border-white/40 px-5 py-2 text-white transition hover:border-white"
-              >
-                Browse the archive
-              </Link>
-            </div>
-          </div>
-        </header>
+    <div className="mx-auto max-w-5xl px-4 sm:px-6">
+      {/* Hero */}
+      <section className="animate-fade-in py-16 sm:py-24">
+        <div className="max-w-2xl">
+          <p className="text-[13px] font-medium uppercase tracking-[0.15em] text-[var(--accent)]">
+            AI Operator Journal
+          </p>
+          <h1 className="mt-4 text-[2.25rem] font-semibold leading-[1.1] tracking-tight text-[var(--text-primary)] sm:text-[3rem] lg:text-[3.5rem]">
+            Field notes on using AI agents to replace meetings, freelancers, and
+            busywork.
+          </h1>
+          <p className="mt-4 text-[17px] leading-relaxed text-[var(--text-secondary)] max-w-[65ch]">
+            Whenever I watch a standout video or run a real experiment, I
+            translate it into a playbook here &mdash; no fluff, just the signal
+            my future self will actually use.
+          </p>
+        </div>
+      </section>
 
-        <section id="posts" className="space-y-6">
-          <div className="flex flex-col gap-2">
-            <p className="text-sm uppercase tracking-[0.4em] text-zinc-500"> Fresh drops </p>
-            <h2 className="text-3xl font-semibold text-zinc-900 dark:text-white">Latest posts</h2>
-          </div>
-          <div className="grid gap-6 md:grid-cols-2">
-            {posts.map((post) => (
-              <PostCard key={post.slug} post={post} />
-            ))}
-            {posts.length === 0 && (
-              <p className="col-span-full rounded-3xl border border-dashed border-zinc-300/80 p-8 text-zinc-500">
-                First article coming soon.
-              </p>
-            )}
-          </div>
-        </section>
-      </div>
+      {/* Latest posts */}
+      <section className="pb-16 sm:pb-24">
+        <div className="mb-8 flex items-center justify-between">
+          <h2 className="text-[15px] font-semibold text-[var(--text-primary)]">
+            Latest posts
+          </h2>
+          {posts.length > 2 && (
+            <Link
+              href="/blog"
+              className="text-[13px] font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+            >
+              View all &rarr;
+            </Link>
+          )}
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+          {posts.slice(0, 6).map((post, i) => (
+            <div
+              key={post.slug}
+              className="animate-fade-in-up"
+              style={{ animationDelay: `${0.05 * (i + 1)}s` }}
+            >
+              <PostCard post={post} />
+            </div>
+          ))}
+        </div>
+        {posts.length === 0 && (
+          <p className="rounded-xl border border-dashed border-[var(--border)] p-8 text-center text-[15px] text-[var(--text-muted)]">
+            First article coming soon.
+          </p>
+        )}
+      </section>
     </div>
   );
 }

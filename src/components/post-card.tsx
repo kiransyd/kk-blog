@@ -3,36 +3,48 @@ import { formatDate } from "@/lib/format";
 import type { PostSummary } from "@/lib/mdx";
 
 export function PostCard({ post }: { post: PostSummary }) {
+  const accent = post.heroColor || "var(--accent)";
+
   return (
-    <article className="group rounded-3xl border border-zinc-200/80 bg-white/70 p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg dark:border-white/10 dark:bg-white/5">
-      <div className="flex items-center text-sm text-zinc-500 dark:text-zinc-400">
-        <span>{formatDate(post.date)}</span>
-        <span className="mx-2 h-1 w-1 rounded-full bg-zinc-300" aria-hidden />
-        <span>{post.readingTime}</span>
-      </div>
-      <h2 className="mt-4 text-2xl font-semibold leading-snug text-zinc-900 dark:text-white">
-        <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2">
-          <span className="bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
-            {post.title}
-          </span>
-          <span className="translate-y-px text-xl opacity-0 transition group-hover:opacity-100">→</span>
-        </Link>
-      </h2>
-      <p className="mt-3 text-base leading-relaxed text-zinc-600 dark:text-zinc-300">
-        {post.description}
-      </p>
-      {post.tags && post.tags.length > 0 && (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {post.tags.map((tag) => (
-            <span
-              key={tag}
-              className="rounded-full border border-zinc-200/70 px-3 py-1 text-xs uppercase tracking-wide text-zinc-600 dark:border-white/15 dark:text-zinc-300"
-            >
-              {tag}
-            </span>
-          ))}
+    <Link href={`/blog/${post.slug}`} className="group block">
+      <article className="relative overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface)] p-5 transition-all duration-200 hover:border-[var(--text-muted)] sm:p-6">
+        {/* Accent bar */}
+        <div
+          className="absolute inset-x-0 top-0 h-[2px] opacity-60 transition-opacity group-hover:opacity-100"
+          style={{ background: accent }}
+        />
+
+        {/* Meta */}
+        <div className="flex items-center gap-3 text-[13px] text-[var(--text-muted)]">
+          <time dateTime={post.date}>{formatDate(post.date)}</time>
+          <span className="h-1 w-1 rounded-full bg-[var(--text-muted)]" aria-hidden />
+          <span>{post.readingTime}</span>
         </div>
-      )}
-    </article>
+
+        {/* Title */}
+        <h2 className="mt-3 text-[17px] font-semibold leading-snug tracking-tight text-[var(--text-primary)] transition-colors group-hover:text-[var(--accent)]">
+          {post.title}
+        </h2>
+
+        {/* Description */}
+        <p className="mt-2 text-[14px] leading-relaxed text-[var(--text-secondary)] line-clamp-2">
+          {post.description}
+        </p>
+
+        {/* Tags */}
+        {post.tags && post.tags.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {post.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-md border border-[var(--border-subtle)] px-2 py-0.5 text-[11px] font-medium uppercase tracking-wider text-[var(--text-muted)]"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </article>
+    </Link>
   );
 }
