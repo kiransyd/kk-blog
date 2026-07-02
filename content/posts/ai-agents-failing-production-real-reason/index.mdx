@@ -1,0 +1,40 @@
+---
+title: "AI agents keep failing in production. Here’s the real reason."
+description: "I watched a deep dive on why AI agents fall apart in the real world. The culprit isn’t the model—it’s how we think about workflow."
+date: "2026-07-02"
+tags:
+  - AI agents
+  - workflow
+  - automation
+  - practical AI
+heroColor: "#FFBE0B"
+published: true
+---
+
+
+I spent an hour watching a breakdown of AI agents last week. The speaker spent a lot of time on what breaks when you try to move from prototype to production.
+
+I expected the usual complaints: hallucination, latency, cost. Instead, I heard something that clicked.
+
+**The bottleneck isn’t the agent. It’s the handoff.**
+
+Most people build agents as black boxes. You give it a task, it spits out an answer. If it fails, you throw more prompt engineering at it or swap to a bigger model. But the real failure mode is structural.
+
+In a real workflow, an agent doesn’t work in isolation. It needs to read data from a system, pass results to another tool, handle errors gracefully, and know when to escalate to a human. That’s not a prompt problem. That’s a systems problem.
+
+Think about it like a factory floor. If a machine on the assembly line jams, you don’t redesign the machine. You fix the conveyor belt. Most agent implementations forget the conveyor belt exists.
+
+The takeaway for anyone building with AI today:
+
+- **Design the workflow before the agent.** Map out every input, output, and edge case. The agent is just one node.
+- **Assume the agent will be wrong.** Build in human review loops for critical decisions.
+- **Instrument everything.** Signal versus noise only becomes clear when you measure.
+
+The video made me rethink how we approach automation at GoVisually. We’re not shipping agents. We’re shipping reliable parts of a larger system. That shift in framing changes everything.
+
+**TL;DR**
+
+- AI agents fail in production because of poor system design, not bad models.
+- Focus on handoffs between agent and the rest of the workflow.
+- Build for failure first, then optimize for speed.
+- Workflow design is a durable advantage. Prompt engineering is a commodity.
