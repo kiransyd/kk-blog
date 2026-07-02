@@ -1,0 +1,49 @@
+---
+title: "The real signal from SF’s AI gold rush"
+description: "A dozen hot takes from a week in SF. I filtered out the noise and found three things you can actually use today."
+date: "2026-07-02"
+tags:
+  - AI agents
+  - SaaS
+  - practical AI
+  - MCP
+heroColor: "#118AB2"
+published: true
+---
+
+
+Greg Isenberg’s thread from SF is a firehose. 17 observations, a few billionaires, and lots of hype.
+
+I read it twice. Three things stood out as genuinely useful for builders like us.
+
+**1. The new SaaS playbook: buy, cut, add agents, raise prices.**
+
+Billionaires are buying existing SaaS companies, stripping headcount, rebuilding the tech with agents, then raising prices. Bending Spoons and Cohen’s eBay deal are the templates.
+
+This isn’t a trend. It’s a thesis: most SaaS products are over-staffed and under-automated. If you can acquire the customer base and replace the delivery layer with agents, you create a machine that prints money.
+
+Practical takeaway: If you’re bootstrapping or raising, think about defensibility. Can someone copy your product and serve it with a fraction of your team? If yes, you need either a distribution moat or a data moat. The “we have 20 support reps” argument is dead.
+
+**2. MCP is the new SEO. If agents can’t find you, you don’t exist.**
+
+Every conversation Greg had mentioned MCP (Model Context Protocol). Companies that expose their product as MCP endpoints are getting pulled into deals they never pitched. The ones that don’t are invisible to agent workflows.
+
+This is first-principles thinking: agents are the new users. If your API isn’t discoverable by an agent, you’ve locked the door. Build for machine-native consumption, not just human UIs.
+
+**3. Agent debt is real. And it’s worse than technical debt.**
+
+One founder coined “agent debt” — when you hack together an agent workflow and never clean it, the prompts conflict, memory gets polluted, tools overlap. Six months later the agent does weird things and nobody knows why.
+
+Every team I’ve talked to building agent-based products has hit this. The fix is boring but necessary: treat agent code like production code. Version your prompts. Test your agent end-to-end. Don’t duct-tape workflows.
+
+**The real insight?**
+
+Greg’s thread reinforces what I’ve been saying: the advantage isn’t the model. It’s your understanding of the workflow. Frontier model companies can see API calls and token counts but not the actual workflows. If you’re deep in a niche using these models in ways the model companies haven’t seen, that understanding is your moat.
+
+Build for agents, keep your workflows clean, and focus on the niche. The age of “which model” is almost over. The age of “how do we make this actually work” has just begun.
+
+**TL;DR**
+- The new SaaS playbook: buy companies, cut headcount, add agents, raise prices. Ask yourself if your product is vulnerable.
+- Expose your product as MCP endpoints. Agents are the new customers.
+- Track and clean your agent workflows. “Agent debt” is a real thing that breaks your system.
+- Your niche workflow knowledge is your durable advantage, not the model.
