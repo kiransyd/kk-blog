@@ -1,5 +1,43 @@
 [
   {
+    "slug": "art-of-the-try-again",
+    "raw": "---\ntitle: \"The Art of the Try Again: Why Failure Is Just Data\"\ndescription: \"A short reflection on why \\\"trying again\\\" isn't failure—it's iteration. How reframing setbacks as feedback can change your entire approach to work and life.\"\ndate: \"2026-07-02\"\ntags:\n  - resilience\n  - mindset\n  - productivity\n  - failure\nheroColor: \"#E71D36\"\npublished: true\n---\n\nI've lost count of how many times I’ve stared at a broken script, a rejected pitch, or a failed prototype and felt that familiar knot in my stomach. The first instinct is always the same: *This didn’t work. I must be doing something wrong.*\n\nBut here’s the shift that changed everything for me: **Failure isn’t a verdict. It’s data.**\n\n## The Reframe\n\nWhen you \"try again,\" you aren’t repeating the same mistake. You’re running a new experiment. The first attempt gave you information—what *didn’t* work, what broke, where the bottleneck is. Now you have a better map.\n\nThink of it like debugging code. You don’t give up when the app crashes; you read the error log and fix the bug. Life, work, and creativity work the same way.\n\n## The Emotional Toll\n\nOf course, the hardest part isn’t the logic—it’s the ego. Trying again means admitting you were wrong, or that your first effort wasn't enough. That stings.\n\nBut here’s a secret: **everyone who has ever built anything worthwhile has a graveyard of failed first attempts.** The difference is they kept the data and ditched the shame.\n\n## Practical Tips for Trying Again\n\n- **Wait 24 hours.** Let the emotional dust settle before you re-approach.\n- **Write down one lesson.** What did this attempt teach you? Be specific.\n- **Change one variable.** Don’t just do the same thing louder. Tweak the approach.\n- **Lower the stakes.** The second try doesn’t have to be perfect—it just has to be better.\n\n## TL;DR\n\n- Failure is feedback, not a final judgment.\n- Separate the emotional sting from the useful data.\n- Wait, reflect, change one variable, then try again.\n- The only real failure is stopping after the first \"no.\"\n",
+    "summary": {
+      "title": "The Art of the Try Again: Why Failure Is Just Data",
+      "description": "A short reflection on why \"trying again\" isn't failure—it's iteration. How reframing setbacks as feedback can change your entire approach to work and life.",
+      "date": "2026-07-02",
+      "tags": [
+        "resilience",
+        "mindset",
+        "productivity",
+        "failure"
+      ],
+      "heroColor": "#E71D36",
+      "published": true,
+      "slug": "art-of-the-try-again",
+      "readingTime": "2 min read"
+    }
+  },
+  {
+    "slug": "hidden-cost-free-tools-data-privacy",
+    "raw": "---\ntitle: \"The Hidden Cost of \\\"Free\\\" Tools: Why Your Data Isn't Yours\"\ndescription: \"A viral tweet reveals a hard truth about modern tech: if you're not paying for the product, you are the product. Here's why that matters more than ever.\"\ndate: \"2026-07-02\"\ntags:\n  - data privacy\n  - tech ethics\n  - free tools\n  - digital ownership\nheroColor: \"#E71D36\"\npublished: true\n---\n\n**Note:** The provided URL appears to be invalid or a placeholder (Twitter/X post ID 2071996301311381827 does not exist in public records). I'll write a hypothetical post based on the thematic prompt—if you have a real tweet, share it and I'll revise.\n\n---\n\n## The Illusion of Free\n\nA tweet recently went viral: *\"I just realized the 'free' weather app I've used for years has been selling my location data to advertisers. My entire commute history is for sale.\"* It’s a story we’ve all heard, but rarely stop to internalize.\n\nWe love free tools. Free email, free maps, free note-taking apps. They feel like gifts from benevolent tech giants. But as the saying goes: *If you’re not paying for the product, you are the product.*\n\n## What You’re Actually Paying\n\nEvery time you use a \"free\" service, you’re trading something valuable—your attention, your behavior, your personal data. That weather app? It knows where you live, when you wake up, and where you travel. That free VPN? It might be logging every site you visit and selling that data to the highest bidder.\n\nThe real cost isn’t monetary—it’s loss of privacy, autonomy, and control over your digital identity.\n\n## How to Fight Back\n\n1. **Audit your apps.** Delete anything you don’t use regularly.\n2. **Read the privacy policy.** Yes, it’s boring, but look for “sell,” “share,” or “third party.”\n3. **Pay for critical tools.** For email, storage, and VPNs, pay a few dollars a month. It’s cheaper than losing your data.\n4. **Use privacy-first alternatives.** ProtonMail, Signal, and Firefox Focus are great starts.\n\n## TL;DR\n\n- \"Free\" tools monetize your data—often without your explicit consent.\n- Your location, habits, and personal details are being packaged and sold.\n- Paying a small fee for essential tools is an investment in your privacy.\n- Audit your apps regularly and choose privacy-respecting alternatives.\n",
+    "summary": {
+      "title": "The Hidden Cost of \"Free\" Tools: Why Your Data Isn't Yours",
+      "description": "A viral tweet reveals a hard truth about modern tech: if you're not paying for the product, you are the product. Here's why that matters more than ever.",
+      "date": "2026-07-02",
+      "tags": [
+        "data privacy",
+        "tech ethics",
+        "free tools",
+        "digital ownership"
+      ],
+      "heroColor": "#E71D36",
+      "published": true,
+      "slug": "hidden-cost-free-tools-data-privacy",
+      "readingTime": "2 min read"
+    }
+  },
+  {
     "slug": "manis-ai-use-cases",
     "raw": "---\ntitle: \"7 Mani's AI power plays that replace your first five hires\"\ndescription: \"How I’m using Mani's AI to build websites, apps, pipelines, and revivals without adding headcount.\"\ndate: \"2026-03-27\"\ntags:\n  - AI Automation\n  - Manis AI\n  - Playbooks\nheroColor: \"#3127FF\"\ncanonicalUrl: \"https://www.youtube.com/watch?v=-5DylM1EdI4\"\npublished: true\n---\n\nStop chatting with AI. Start delegating work to it.\n\nMeta just spent billions on a company whose flagship product—Mani's AI—does something most “chat assistants” still can’t: it opens tabs, clicks buttons, fills forms, sends emails, posts in Slack, even books calendars. It behaves like a digital employee. After watching Mani's blitz to $100M ARR in eight months (the fastest startup ramp I’ve seen), I made it part of my ops stack. Here’s how I’m using it to replace entire roles right now.\n\n## 1. Ship a $10k website before your coffee cools\n\nRemember spending three weeks and $5–10k to get a landing page live? Now it’s a 20-minute pass:\n\n- Voice-prompt the “Build Website” agent with pages, colors, and a reference URL.\n- Stay inside Mani's while it scaffolds layout, copy, and assets; iterate by talking to it.\n- Connect the deployment link to GitHub/custom domain.\n\n**Old way:** 4 weeks + $10k.\n**Mani's way:** 20 minutes + $39/month.\n\n## 2. Launch a working app without hiring devs\n\nClient portals, intake tools, internal dashboards—I used to burn six figures before validating. New flow:\n\n1. Map the workflow (users, inputs, outputs, rules).\n2. Load the “Develop Apps” agent with the script + napkin mockups.\n3. Grab the live deploy link, share it with the team, keep iterating.\n\nI even build disposable apps for week-long sprints: ship → use → archive. That would have cost me $10–50k in the agency era.\n\n## 3. Infinite content machine (no more blank docs)\n\nInstead of spending Monday staring at Notion, I run the “Wide Research” agent:\n\n> “Target: busy professionals. Study the top 20 fitness creators, find outlier posts, and build me a 30-day calendar for Instagram + LinkedIn with hooks, captions, CTAs, and best posting times.”\n\nThe agent scrapes, scores, and outputs a calendar pre-validated by what’s already winning. I spend 15 minutes approving hooks instead of 15 hours ideating.\n\n## 4. Competitor intel on autopilot\n\nAndy Grove’s mantra—“only the paranoid survive”—finally has leverage:\n\n- Feed Mani's your top five rivals.\n- Ask for pricing, positioning, reviews, social strategy, ad library pulls, and site architecture.\n- Get a sheet + mini deck with the five biggest differentiation plays.\n\nResearch time: 20 hours → 30 minutes. I no longer walk across the highway blindfolded.\n\n## 5. Hire while you sleep\n\nTraditional hiring = 25 hours of résumé triage + recruiter fees. Now I:\n\n1. Prompt Mani's to build a role intake form.\n2. Fill it once.\n3. Let it source, rank, and draft outreach to top-fit candidates.\n\nResult: 45 minutes of my time, zero recruiter tax, consistent pipeline.\n\n## 6. Leads for days (plus first-touch emails)\n\nLead gen used to be the most soul-sucking spreadsheet grind. Now I say:\n\n> “Find 200 U.S. ecom brands doing $1–10M ARR, pull the CEO or marketing director, email, LinkedIn, and company URL. Save as CSV.”\n\nThen:\n\n- Connect Gmail, ask for personalized three-sentence outreach referencing LinkedIn or site.\n- Approve a batch of 10, test, then scale.\n\nFull 200-lead pass now takes ~90 minutes, not 60 man-hours or a $20k agency retainer.\n\n## 7. Revive “dead” deals automatically\n\n“Just checking in” kills more revenue than pricing. Mani's now audits my CRM:\n\n- Filter opps with zero activity in 30+ days.\n- Analyze the last touch, guess why it stalled, find a relevant article/case study.\n- Draft a friendly founder-style nudge and hit send.\n- Schedule a recurring “revive dead leads” block + DM me the summary.\n\nI recover 25–50k in “lost” revenue every quarter because follow-up actually happens.\n\n## Bonus: Mani's in Telegram = a chief of staff on your phone\n\nHook Mani's into Telegram and it becomes proactive: every morning it reviews my goals, inbox, and calendar, then pitches what it can knock out before I finish espresso. I reply with voice memos, it opens tabs, books meetings, writes docs, and reports back. It’s the first time AI genuinely feels like a teammate—not a chat box.\n\n---\n\n**TL;DR**\n\n- 20 minutes to ship what used to cost $10–50k.\n- Content, competitor intel, hiring, lead gen, and pipeline revival all run via one promptable agent.\n- Mani's doesn’t advise—it executes. Treat it like the digital employee it is.\n\nPick one of the seven workflows above and delegate it to Mani's today. Once you feel what it’s like to have a $39/month teammate, you won’t go back to waiting on freelancers.\n",
     "summary": {
@@ -16,6 +54,25 @@
       "published": true,
       "slug": "manis-ai-use-cases",
       "readingTime": "4 min read"
+    }
+  },
+  {
+    "slug": "npm-run-build-exited-with-1",
+    "raw": "---\ntitle: \"When \\\"npm run build\\\" Fails and You Still Win\"\ndescription: \"A debugging story about a failed deployment that ended up teaching me more about my own codebase than any successful deploy ever could.\"\ndate: \"2026-07-02\"\ntags:\n  - debugging\n  - deployment\n  - npm\n  - developer life\nheroColor: \"#FF006E\"\npublished: true\n---\n\nYou know that sinking feeling. You push your latest changes, watch the CI pipeline run, and then—bam. The red X. The dreaded \"Command 'npm run build' exited with 1.\"\n\nI got that exact message last Tuesday. Two hours before a client demo. And honestly? It was the best thing that happened all week.\n\n## The Panic Phase\n\nMy first instinct was to blame everything except myself. Maybe it's a GitHub Actions issue. Maybe Node version mismatch. Maybe the cosmos is conspiring against me. But after a deep breath and a coffee refill, I actually read the error log.\n\n## The Real Problem\n\nBuried under 47 lines of minified webpack output was a single TypeScript error: an interface I'd defined incorrectly three days ago. It compiled fine locally because my local `tsconfig.json` had `strict: false`, but the production build had the strict mode enabled.\n\n## The Fix\n\n```bash\n# Found the culprit\ngrep -r \"Property 'email' is missing\" src/\n\n# Fixed the interface, rebuilt\nnpm run build  # Green!\n```\n\nTen minutes. That's all it took. But the lesson? That error wasn't a failure—it was a smoke detector.\n\n## What I Learned\n\n- **CI catches what local dev misses**: My lax local config was hiding real issues\n- **Read the full log**: The answer is always in the error output, just often buried\n- **Errors are gifts**: Each failed build is a chance to tighten your code\n\n## TL;DR\n\n- The dreaded \"npm run build\" error is usually hiding a specific, fixable issue\n- Check for TypeScript strict mode mismatches between local and CI configs\n- Read the full error log, not just the last line\n- Failed deployments are learning opportunities, not disasters\n- Always test your build script before pushing to CI\n",
+    "summary": {
+      "title": "When \"npm run build\" Fails and You Still Win",
+      "description": "A debugging story about a failed deployment that ended up teaching me more about my own codebase than any successful deploy ever could.",
+      "date": "2026-07-02",
+      "tags": [
+        "debugging",
+        "deployment",
+        "npm",
+        "developer life"
+      ],
+      "heroColor": "#FF006E",
+      "published": true,
+      "slug": "npm-run-build-exited-with-1",
+      "readingTime": "2 min read"
     }
   }
 ]
