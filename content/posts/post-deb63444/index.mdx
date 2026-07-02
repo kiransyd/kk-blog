@@ -1,0 +1,48 @@
+---
+title: "**TITLE:** Why your next AI agent should be a single-purpose tool"
+description: "**TITLE:** Why your next AI agent should be a single-purpose tool"
+date: "2026-07-02"
+tags:
+  - Blog
+heroColor: "#FF6B35"
+published: true
+---
+
+**TITLE:** Why your next AI agent should be a single-purpose tool
+
+**DESCRIPTION:** A quick lesson from building software: most AI agents fail because they try to do everything. Here's why narrow beats broad.
+
+**TAGS:** AI agents, product design, SaaS, practical AI
+
+**SLUG:** single-purpose-ai-agents
+
+I saw this post from Michiel Lieben about AI agents and it hit on something I've been thinking about for months.
+
+Most people building AI agents today are trying to build a Swiss Army knife. One agent that can do everything—research, write code, manage your calendar, order lunch.
+
+That's the wrong approach.
+
+Here's why: every time you add a capability to an agent, you introduce new failure modes. The agent gets confused about which tool to use. It hallucinates more. It becomes slower.
+
+I learned this the hard way building GoVisually. We tried to build one agent that could handle all packaging compliance checks. It was a mess.
+
+Then we broke it into smaller agents:
+- One agent that only reads ingredient lists
+- One that only checks nutritional panels
+- One that only validates allergen statements
+
+Each one is dumb. But together, they're smart.
+
+The first principles question is: what's the simplest unit of work that can be automated without introducing ambiguity?
+
+If you can answer that, you have your agent's scope.
+
+**Practical takeaway:** Start with one narrow task. Make it work perfectly. Then add the next agent, not the next feature.
+
+The compounding effect of many simple, reliable agents beats one complex, unreliable agent every time.
+
+**TL;DR:**
+- Single-purpose agents outperform multi-purpose agents
+- Each new capability introduces failure modes
+- Break complex workflows into atomic agent tasks
+- Start narrow, perfect it, then add more agents
