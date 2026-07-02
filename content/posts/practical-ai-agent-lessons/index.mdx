@@ -1,0 +1,36 @@
+---
+title: "What I learned about AI agents from a 40-minute video"
+description: "Most agent demos are toys. This talk had two practical insights that changed how I think about building agents for real-world workflows."
+date: "2026-07-02"
+tags:
+  - AI agents
+  - practical AI
+  - automation
+  - workflow
+heroColor: "#F77F00"
+published: true
+---
+
+I watched that 40-minute video on AI agents last night. A lot of it was familiar – chain-of-thought, tool calling, the usual hype cycle. But two specific points stuck with me because they address real bottlenecks I’ve hit building agents for packaging compliance.
+
+**1. The loop matters more than the LLM**
+
+Everyone focuses on getting the best model. But the video emphasized that the *agentic loop* – how the agent decides when to call a tool, when to stop, what to do with errors – is where most projects succeed or fail. A mediocre model with a solid loop beats a brilliant model with a fragile one.
+
+I see this every day. Our compliance agents need to check packaging text against regulations, then repair incorrect labels, then verify again. If the loop isn’t designed to handle ambiguous responses or API failures, the whole thing breaks. The LLM is just a component.
+
+**2. State management is the hidden bottleneck**
+
+Agents are multi-step systems. They gather data, make decisions, take actions, then report back. If you don’t manage state properly – what has been done, what failed, what needs human review – you end up with a black box.
+
+The video showed a simple pattern: *log everything, keep a separate error state, and only proceed when the error count is zero.* Sounds obvious, but most people skip it because they want the agent to “just work.” It won’t. Real-world agents fail constantly. You need to handle failure gracefully.
+
+**Where I’d push back**
+
+The video implied agents can handle complex workflows autonomously after one prompt. In my experience, you still need hard-coded guardrails – especially in regulated industries. An agent that guesses wrong on a packaging compliance rule can cost thousands in reprints. You need the loop to escalate to a human when confidence is low.
+
+**TL;DR**
+- Don’t obsess over the model; invest in the agentic loop.
+- State management and error handling are what make agents production-ready.
+- Add explicit human escalation points for high-stakes decisions.
+- Watch the video for the loop design examples – they’re worth the 40 minutes.
