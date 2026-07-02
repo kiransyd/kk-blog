@@ -12,8 +12,13 @@ async function main() {
   try {
     entries = await fs.readdir(CONTENT_DIR, { withFileTypes: true });
   } catch (error) {
-    console.error(`[posts] unable to read content directory: ${CONTENT_DIR}`);
-    throw error;
+    if (error.code === 'ENOENT') {
+      console.log(`[posts] directory ${CONTENT_DIR} does not exist — no posts yet`);
+      entries = [];
+    } else {
+      console.error(`[posts] unable to read content directory: ${CONTENT_DIR}`);
+      throw error;
+    }
   }
 
   const posts = [];
