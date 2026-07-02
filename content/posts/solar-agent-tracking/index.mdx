@@ -1,0 +1,94 @@
+---
+title: "How I Use an AI Agent to Track My Solar Battery (And You Can Too)"
+description: "I set up a dedicated Hermes agent profile to collect solar generation, battery status, and grid consumption data. Here is exactly how it works and how you could build the same thing."
+date: "2026-07-02"
+tags:
+  - AI Agents
+  - Home Automation
+  - Solar
+  - Self-hosting
+  - Hermes Agent
+heroColor: "#06D6A0"
+published: true
+---
+
+I have three solar systems across my property in Sydney. Sungrow panels on one roof, Growatt on another, and a FoxESS battery handling storage. For months I was checking three different apps to understand what was happening with my energy. It was the kind of manual process that, as a software person, I knew I should automate.
+
+So I built a dedicated Hermes agent profile that tracks everything in one place.
+
+## The problem with most energy monitoring
+
+The solar industry is fragmented. Each manufacturer ships its own app and API. Sungrow has iSolarCloud. Growatt has its own portal. FoxESS has FoxCloud. None of them talk to each other. If you have a combined system like mine, you end up hopping between apps trying to figure out whether the battery is charging, whether you are exporting to the grid, or whether your EV just drained everything.
+
+It is a classic data integration problem. And it turns out, an AI agent is a surprisingly good fit for solving it.
+
+## How the Hermes agent setup works
+
+Hermes Agent supports something called "profiles." Each profile is a completely separate configuration with its own gateway, its own model settings, its own cron jobs, and its own tools. I created a `solar` profile:
+
+```
+~/.hermes/profiles/solar/
+  config.yaml      # profile config
+  collect.py       # data collection script
+  energy.db        # sqlite database
+  cron/            # scheduled collection jobs
+```
+
+The collector script is a Python CLI that supports commands like:
+
+```
+python3 collect.py record --solar-produced 12.5 --battery-charge 80
+python3 collect.py daily-summary
+python3 collect.py status
+python3 collect.py week
+```
+
+It connects to the FoxESS API using the `foxesscloud` library, reads inverter data, and stores everything in a local SQLite database. The Sungrow and Growatt integrations use their respective APIs too, though in my case those are still being set up while I wait for the right API credentials.
+
+## The cron jobs
+
+The agent runs a few scheduled tasks through Hermes' cron system. Every 30 minutes during daylight hours, it polls the FoxESS battery to record charge level and power flow. At the end of each day, it generates a summary of solar produced, battery cycled, and grid consumed.
+
+The gateway runs as a systemd service:
+
+```
+systemctl --user status hermes-gateway-solar
+```
+
+This means it starts on boot, restarts on failure, and logs everything to journald. It is boring infrastructure, which is exactly what you want for something that should just work.
+
+## How you could do the same
+
+If you have solar or a home battery and want to track it with an agent, the pattern is straightforward:
+
+1. **Pick an agent framework.** I use Hermes Agent because I already had it running for other things, but any agent that supports scheduled tasks and tool use would work.
+
+2. **Create a dedicated profile.** Keep your energy monitoring separate from your main agent config. If something breaks, you do not want it affecting your other automation.
+
+3. **Write a data collection script.** Most solar inverters expose APIs. FoxESS has `foxesscloud` on PyPI. Sungrow uses iSolarCloud. Growatt has an open API. If your inverter is offline-only, a $20 ESP32 with a CT clamp sensor can feed data via MQTT.
+
+4. **Store data locally.** SQLite is more than enough for personal energy data. A single database file can hold years of 5-minute interval readings without breaking a sweat.
+
+5. **Schedule collection.** Use your agent's cron or scheduler to poll at sensible intervals. Every 30 minutes is plenty for battery monitoring. Daily summaries are enough for trend analysis.
+
+6. **Visualise or alert.** Once the data is in a database, you can query it however you want. I use the agent's CLI to ask questions like "how much solar did I export last week" or "what was my peak battery discharge yesterday."
+
+## What I have learned so far
+
+The most useful insight has been understanding my battery cycling patterns. Before the agent, I knew roughly when the battery charged and discharged. Now I know exactly: how many kWh cycled per day, what time the battery hits full charge, and whether my EV charging habits are optimised for my solar generation.
+
+Turns out, I was exporting about 30% more solar than I realised because the battery was full by midday. I have since shifted some of my EV charging to overlap with that excess generation window.
+
+That single change will probably pay for the setup time within a few months.
+
+## The bottom line
+
+You do not need a smart home platform or a commercial energy monitor to track your solar data. An AI agent, a collection script, and a local database is enough. The setup takes an afternoon, and the insights keep compounding.
+
+## TL;DR
+
+- I use a dedicated Hermes Agent profile to track three solar systems and one battery
+- A Python collection script polls the FoxESS API and stores data in SQLite
+- Cron jobs run every 30 minutes, with daily summaries
+- The data helped me recover ~30% of excess solar exports by shifting EV charging timing
+- Anyone with a compatible inverter can set this up in an afternoon
