@@ -29,7 +29,7 @@ export async function generateMetadata({
       title: post.frontmatter.title,
       description: post.frontmatter.description,
       type: "article",
-      url: `https://kirans-blog.vercel.app/blog/${slug}`,
+      url: `https://blog.kirankumar.co/blog/${slug}`,
       tags: post.frontmatter.tags,
     },
   };
