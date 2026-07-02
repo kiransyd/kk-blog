@@ -1,0 +1,62 @@
+---
+title: "AI agents are just smart functions"
+description: "Breaking down the practical layers of AI agents. No magic, just systems engineering."
+date: "2026-07-02"
+tags:
+  - AI agents
+  - practical AI
+  - workflow automation
+  - systems thinking
+heroColor: "#00F5D4"
+published: true
+---
+
+
+I watched this talk by Chip Huyen on AI engineering.
+
+She said something that stopped me.
+
+"An agent is just a function that can decide which other function to call."
+
+That's it. No magic. No sentience. No AGI.
+
+It's a function with a conditional.
+
+Think about how we build software today. We have functions. A function does one thing well. It takes an input, returns an output. Predictable. Testable.
+
+An agent is the same thing, except it has a language model inside it that decides the routing.
+
+Instead of an `if/else` block, you have a prompt that says: "Given this user request, call function A, B, or C."
+
+That's the first principles breakdown.
+
+Three layers matter:
+
+**1. The model** – the reasoning engine. This is where you pick GPT-4, Claude, or a smaller open-source model. Trade-off: bigger models are smarter but slower and more expensive.
+
+**2. The tools** – the functions the agent can call. These are just APIs. Send an email. Query a database. Update a spreadsheet. Nothing new here. We've had APIs for decades.
+
+**3. The orchestration** – how the agent decides which tool to call, in what order, and what to do when something fails. This is where most of the engineering work lives. It's a state machine with a language model as the decision node.
+
+Chip pointed out something I see all the time. People over-engineer agents. They add memory, planning, reflection loops, multi-agent conversations.
+
+Most of that is noise.
+
+For 90% of real-world use cases, you need:
+- One model call
+- One tool call
+- A simple retry loop
+
+That's it. That's your AI agent.
+
+The durable advantage isn't in the agent architecture. It's in the tools you give it. If your API is unreliable, your agent will be unreliable. If your data is messy, your agent will make bad decisions.
+
+Focus on the foundations. Build clean APIs. Clean data. Clean error handling.
+
+Then wrap a model around it.
+
+**TL;DR:**
+- An agent is just a function that decides which other function to call
+- Three layers: model, tools, orchestration
+- Most agents are over-engineered. Start with one model call, one tool call, one retry loop
+- The real advantage is in the quality of your tools and data, not the agent architecture
