@@ -24,19 +24,19 @@ export function Nav() {
   }
 
   return (
-    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--bg-page)]/80 backdrop-blur-lg">
-      <nav className="mx-auto flex h-14 max-w-5xl items-center justify-between px-4 sm:px-6">
+    <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-[var(--bg-page)]/85 backdrop-blur-md">
+      <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5 sm:px-8">
         <div className="flex items-center gap-8">
           <Link
             href="/"
-            className="text-[15px] font-medium tracking-tight text-[var(--text-primary)] transition-colors hover:text-[var(--accent)]"
+            className="font-[family-name:var(--font-sans)] text-[15px] font-medium tracking-tight text-[var(--text-primary)] transition-colors hover:text-[var(--accent)]"
           >
             Kiran Kumar
           </Link>
           <div className="hidden items-center gap-6 sm:flex">
             <Link
               href="/blog"
-              className="text-[13px] font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+              className="font-[family-name:var(--font-sans)] text-[13px] font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
             >
               Blog
             </Link>
@@ -46,7 +46,7 @@ export function Nav() {
         <div className="flex items-center gap-3">
           <button
             onClick={toggleTheme}
-            className="flex h-8 w-8 items-center justify-center rounded-lg border border-[var(--border)] bg-[var(--surface)] text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+            className="flex h-8 w-8 items-center justify-center rounded-md border border-[var(--border)] bg-[var(--surface)] text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
             aria-label="Toggle theme"
           >
             {mounted && isDark ? (

@@ -6,18 +6,18 @@ export default async function HomePage() {
   const posts = await getPostSummaries();
 
   return (
-    <div className="mx-auto max-w-5xl px-4 sm:px-6">
+    <div className="mx-auto max-w-5xl px-5 sm:px-8">
       {/* Hero */}
-      <section className="animate-fade-in py-16 sm:py-24">
-        <div className="max-w-2xl">
-          <p className="text-[13px] font-medium uppercase tracking-[0.15em] text-[var(--accent)]">
-            AI Operator Journal
+      <section className="animate-fade-in py-20 sm:py-28">
+        <div className="max-w-[42rem]">
+          <p className="font-[family-name:var(--font-sans)] text-[13px] font-medium uppercase tracking-[0.12em] text-[var(--accent)]">
+            Kiran Kumar
           </p>
-          <h1 className="mt-4 text-[2.25rem] font-semibold leading-[1.1] tracking-tight text-[var(--text-primary)] sm:text-[3rem] lg:text-[3.5rem]">
+          <h1 className="mt-5 font-[family-name:var(--font-sans)] text-[2.5rem] font-semibold leading-[1.1] tracking-tight text-[var(--text-primary)] sm:text-[3.25rem] lg:text-[3.75rem]">
             Field notes on using AI agents to replace meetings, freelancers, and
             busywork.
           </h1>
-          <p className="mt-4 text-[17px] leading-relaxed text-[var(--text-secondary)] max-w-[65ch]">
+          <p className="mt-5 font-[family-name:var(--font-serif)] text-[1.1875rem] leading-relaxed text-[var(--text-secondary)] max-w-[38rem]">
             Whenever I watch a standout video or run a real experiment, I
             translate it into a playbook here &mdash; no fluff, just the signal
             my future self will actually use.
@@ -26,21 +26,21 @@ export default async function HomePage() {
       </section>
 
       {/* Latest posts */}
-      <section className="pb-16 sm:pb-24">
-        <div className="mb-8 flex items-center justify-between">
-          <h2 className="text-[15px] font-semibold text-[var(--text-primary)]">
+      <section className="pb-20 sm:pb-28">
+        <div className="mb-10 flex items-center justify-between">
+          <h2 className="font-[family-name:var(--font-sans)] text-[15px] font-semibold text-[var(--text-muted)] uppercase tracking-[0.08em]">
             Latest posts
           </h2>
           {posts.length > 2 && (
             <Link
               href="/blog"
-              className="text-[13px] font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
+              className="font-[family-name:var(--font-sans)] text-[13px] font-medium text-[var(--text-secondary)] transition-colors hover:text-[var(--text-primary)]"
             >
               View all &rarr;
             </Link>
           )}
         </div>
-        <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+        <div className="grid gap-5 sm:grid-cols-2">
           {posts.slice(0, 6).map((post, i) => (
             <div
               key={post.slug}
@@ -52,7 +52,7 @@ export default async function HomePage() {
           ))}
         </div>
         {posts.length === 0 && (
-          <p className="rounded-xl border border-dashed border-[var(--border)] p-8 text-center text-[15px] text-[var(--text-muted)]">
+          <p className="rounded-lg border border-dashed border-[var(--border)] p-8 text-center text-[15px] text-[var(--text-muted)] font-[family-name:var(--font-serif)]">
             First article coming soon.
           </p>
         )}

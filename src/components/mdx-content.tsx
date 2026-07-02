@@ -3,29 +3,38 @@ import type { MDXComponents } from "mdx/types";
 export const mdxComponents: MDXComponents = {
   h2: (props) => (
     <h2
-      className="mt-12 scroll-m-20 text-2xl font-semibold tracking-tight text-[var(--text-primary)]"
+      className="mt-12 scroll-m-20 text-[1.5rem] font-semibold leading-tight tracking-tight text-[var(--text-primary)] font-[family-name:var(--font-sans)]"
       {...props}
     />
   ),
   h3: (props) => (
     <h3
-      className="mt-10 scroll-m-20 text-xl font-semibold tracking-tight text-[var(--text-primary)]"
+      className="mt-10 scroll-m-20 text-[1.25rem] font-semibold leading-snug tracking-tight text-[var(--text-primary)] font-[family-name:var(--font-sans)]"
       {...props}
     />
   ),
   p: (props) => (
-    <p className="mt-6 text-[17px] leading-7 text-[var(--text-secondary)] max-w-[68ch]" {...props} />
+    <p
+      className="mt-6 text-[1.125rem] leading-[1.8] text-[var(--text-secondary)] font-[family-name:var(--font-serif)]"
+      {...props}
+    />
   ),
   ul: (props) => (
-    <ul className="mt-6 list-disc space-y-2 pl-6 text-[17px] leading-7 text-[var(--text-secondary)]" {...props} />
+    <ul
+      className="mt-6 list-disc space-y-2 pl-6 text-[1.125rem] leading-[1.8] text-[var(--text-secondary)] font-[family-name:var(--font-serif)]"
+      {...props}
+    />
   ),
   ol: (props) => (
-    <ol className="mt-6 list-decimal space-y-2 pl-6 text-[17px] leading-7 text-[var(--text-secondary)]" {...props} />
+    <ol
+      className="mt-6 list-decimal space-y-2 pl-6 text-[1.125rem] leading-[1.8] text-[var(--text-secondary)] font-[family-name:var(--font-serif)]"
+      {...props}
+    />
   ),
-  li: (props) => <li className="leading-7" {...props} />,
+  li: (props) => <li className="leading-[1.8]" {...props} />,
   blockquote: (props) => (
     <blockquote
-      className="mt-8 rounded-r-xl border-l-[3px] border-[var(--accent)] bg-[var(--accent-subtle)] px-5 py-4 text-[17px] leading-7 text-[var(--text-primary)]"
+      className="mt-8 mb-8 rounded-r-lg border-l-[3px] border-[var(--accent)] bg-[var(--accent-subtle)] px-6 py-5 text-[1.125rem] leading-[1.8] italic text-[var(--text-primary)] font-[family-name:var(--font-serif)]"
       {...props}
     />
   ),
@@ -38,13 +47,13 @@ export const mdxComponents: MDXComponents = {
   ),
   code: (props) => (
     <code
-      className="rounded-md bg-[var(--accent-subtle)] px-1.5 py-0.5 text-[0.875em] font-medium text-[var(--accent)]"
+      className="rounded-md bg-[var(--accent-subtle)] px-1.5 py-0.5 text-[0.875em] font-medium text-[var(--accent)] font-[family-name:var(--font-mono)]"
       {...props}
     />
   ),
   pre: (props) => (
     <pre
-      className="mt-6 overflow-x-auto rounded-xl border border-[var(--border)] bg-[var(--surface-elevated)] p-4 text-[14px] leading-relaxed text-[var(--text-primary)]"
+      className="mt-6 overflow-x-auto rounded-lg border border-[var(--border)] bg-[var(--surface-elevated)] p-5 text-[0.875rem] leading-relaxed text-[var(--text-primary)] font-[family-name:var(--font-mono)]"
       {...props}
     />
   ),
