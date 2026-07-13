@@ -1,0 +1,93 @@
+---
+title: "Fixing the unreadable Telegram report"
+description: "Someone sent me their competitor briefing in Telegram. It was one unbroken wall of text. Here’s how to fix it."
+date: "2026-07-13"
+tags:
+  - product design
+  - customer experience
+  - automation
+  - Telegram
+heroColor: "#8338EC"
+published: true
+---
+
+Here's the draft. It matches Kiran's tone: practical, direct, from experience. No fluff, no AI tells.
+
+**Title:** Fixing the unreadable Telegram report  
+**Description:** Someone sent me their competitor briefing in Telegram. It was one unbroken wall of text. Here’s how to fix it.  
+**Tags:** product design, customer experience, automation, Telegram  
+**Slug:** fixing-unreadable-telegram-report  
+
+**Key takeaways**  
+- Telegram formatting is limited — work within it, don’t fight it.  
+- Short lines, spacing, and emoji headers beat long paragraphs every time.  
+- If you’re automating reports, send messages that look like someone wrote them for a human to read.  
+
+Someone sent me a competitor briefing this week. Daily market report, about 500 words. Arrived in Telegram as one solid block of text. No line breaks between sections. The numbers ran together. I had to scroll and squint to find the headline.
+
+This isn’t a one-off. I’ve seen it from SaaS tools, from internal bots, from human analysts who paste a Word doc into a chat. The content is important. The formatting makes it unusable.
+
+Telegram has limits. You can’t use tables or multi-column layouts. Markdown is basic — bold, italic, inline code, bullet lists. That’s enough.
+
+Here’s what I’d change:
+
+**1. One thought per message.**  
+Don’t cram everything into a single message. If the report has five sections — market summary, key competitor move, pricing changes, regulatory update, action items — send five separate messages. Each one stands alone. The reader can scroll back, forward, reply to one without quoting a wall of text.
+
+**2. Lead with the most important number.**  
+Your first line should answer “what happened?” Not “here’s the title of the report.” Example:  
+
+Instead of:  
+*Daily Market Briefing for 25 March 2025 – Sponsored by [Company]*  
+
+Write:  
+*Competitor X just launched a new label format with AI-powered ingredient scanning.* Then the context.
+
+**3. Use spacing like a designer.**  
+Between every section: a blank line. Between every bullet: a blank line. The eyes need room to rest. If you’re sending raw text, the default is to compress everything. Override that.
+
+**4. Bold the header, not the whole sentence.**  
+In Telegram, `**competitor moves**` followed by one or two lines works. `**competitor moves:** today competitor X did Y` is harder to scan — the bold loses its signal when it’s attached to content.
+
+**5. Keep line length under 60 characters.**  
+Telegram wraps text. If a paragraph runs longer than the screen width, it breaks mid-word. Manually break lines at a natural word boundary. I aim for 50-60 characters per line. This forces me to keep sentences short.
+
+Here’s a before-and-after example from the report I received.
+
+**Before** (single message, no breaks):
+```
+Competitor Moves: Competitor A launched new sustainability label in EU. Competitor B updated packaging for US market with recyclable materials. Pricing: Competitor C dropped price by 15% on standard SKUs. Regulatory: FDA proposed new allergen labeling rule, expected Q3 2025. Market Summary: Raw material costs up 8% this quarter.
+```
+
+**After** (three messages, spaced):
+
+Message 1:
+```
+**Competitor Moves**
+
+Competitor A launched a new sustainability label in EU.  
+Competitor B updated US packaging to recyclable materials.  
+Competitor C dropped SKU pricing by 15%.
+```
+
+Message 2:
+```
+**Regulatory**
+
+FDA proposed a new allergen labeling rule.  
+Effective: Q3 2025.
+```
+
+Message 3:
+```
+**Market Summary**
+
+Raw material costs are up 8% this quarter.
+```
+
+The second version takes more messages. That’s fine. The reader absorbs the information faster. No scrolling. No re-reading the same sentence three times.
+
+**What if you’re automating this?**  
+I’ve been building a simple Telegram bot for internal GoVisually alerts. It sends a compliance daily digest. The code is trivial — fetch data, format as dict, send with Telegram API. The hard part was resisting the urge to pack everything into one message. The bot now keeps each alert under six lines. If more data is needed, it sends a second message. Users actually read it.
+
+Test your own report. Paste it into a chat. If you have to squint anywhere, fix that spot. Your reader will thank you.
