@@ -1,0 +1,43 @@
+---
+title: "Untitled"
+description: ""
+date: "2026-07-22"
+tags:
+  - Blog
+heroColor: "#FB5607"
+published: true
+---
+
+# The Kimi K3 Lesson: Constraints Beat Hardware
+
+Moonshot AI just published the largest parameter count ever for a model—2.8 trillion. Trained on weaker, export-restricted chips. Not Nvidia's best.
+
+The market got spooked because if you can build a top model without the most advanced silicon, Nvidia's trillion-dollar narrative gets shaky. But here's what I actually took from it, as someone who's built products with limited resources.
+
+## Key takeaways
+- A 2.8 trillion parameter model trained on restricted hardware proves software optimization matters more than raw compute.
+- For bootstrapped teams, this means you don't need the most expensive infrastructure to ship competitive AI products.
+- Nvidia's moat is real, but not unassailable—efficiency gains reduce their pricing power over time.
+- Constraints make you resourceful. Moonshot had to squeeze every drop from weaker chips. That forced innovation.
+
+## What this actually means for founders
+
+Most startup advice on AI assumes you need massive capital. Rent a cluster of H100s, spend millions on training runs, pray you find product-market fit before the money runs out.
+
+Kimi K3 says: not necessarily.
+
+Yes, they still spent heavily on training—Claire mentioned it's the priciest Chinese model release so far. But the interesting part is the *how*. Using weaker chips meant they had to optimise architecture, data quality, and training efficiency. They couldn't just throw compute at the problem.
+
+That's exactly how bootstrappers think. You don't have the luxury of overprovisioning. You build lean, then you find the edges where small investments yield outsized returns.
+
+## What I see in my own work
+
+At GoVisually, we use AI for compliance checks on packaging labels. We're not training trillion-parameter models. We're taking existing models—some open-weight, some API-based—and applying them to a narrow, high-value problem. The hard part isn't the model size. It's the accuracy, the latency, the integration with customer workflows.
+
+If I had waited until we could afford the best GPU setup, we'd still be waiting. Instead, we started with smaller models, iterated on the prompt engineering, built a feedback loop from real customers. That's what shipped a product.
+
+<Image src={require("./images/diagram-1.svg").default} alt="Customer feedback loop for AI accuracy: small model → custom" />
+
+<Image src={require("./images/diagram-2.svg").default} alt="Compute vs Architecture: Throwing more chips at a problem is" />
+
+
